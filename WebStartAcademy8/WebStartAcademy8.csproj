@@ -7,7 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CommonAcademy8">
+      <HintPath>..\..\StartAcademy8\CommonAcademy8\bin\Debug\net8.0\CommonAcademy8.dll</HintPath>
+    </Reference>
+    <Reference Include="DbHandler">
+      <HintPath>..\..\StartAcademy8\DbHandler\bin\Debug\net8.0\DbHandler.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
