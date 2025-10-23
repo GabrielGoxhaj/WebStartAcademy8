@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DbHandler;
 using DbHandler.DataModels;
+using WebStartAcademy8.Models;
 
 namespace WebStartAcademy8.Controllers
 {
@@ -8,12 +9,12 @@ namespace WebStartAcademy8.Controllers
     [Route("[Controller]")]
     public class EmployeeController : ControllerBase
     {
-        private readonly IConfiguration _configuration;
+        private readonly DbParams _params;
         private SqlDbHandler sqlDbHandler;
-        public EmployeeController(IConfiguration configuration)
+        public EmployeeController(DbParams dbParams)
         {
-            _configuration = configuration;
-            sqlDbHandler = new(_configuration.GetConnectionString("DbAcademyOtto"));
+            _params = dbParams;
+            sqlDbHandler = new(_params.SqlConnectionString);
         }
 
         [HttpGet]

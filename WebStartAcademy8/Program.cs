@@ -1,4 +1,6 @@
 
+using WebStartAcademy8.Models;
+
 namespace WebStartAcademy8
 {
     public class Program
@@ -13,6 +15,10 @@ namespace WebStartAcademy8
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            DbParams dbParams = new();
+            dbParams.SqlConnectionString = builder.Configuration.GetConnectionString("DbAcademyOtto");
+            builder.Services.AddSingleton(dbParams);
 
             var app = builder.Build();
 

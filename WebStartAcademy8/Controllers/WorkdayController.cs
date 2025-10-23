@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebStartAcademy8.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,6 +9,12 @@ namespace WebStartAcademy8.Controllers
     [ApiController]
     public class WorkdayController : ControllerBase
     {
+        private readonly DbParams _dbParams;
+        public WorkdayController(DbParams dbParams)
+        {
+            _dbParams = dbParams;
+        }
+
         // GET: api/<WorkdayController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -26,6 +33,7 @@ namespace WebStartAcademy8.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+
         }
 
         // PUT api/<WorkdayController>/5
