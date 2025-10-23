@@ -1,4 +1,5 @@
 
+using DbHandler;
 using WebStartAcademy8.Models;
 
 namespace WebStartAcademy8
@@ -19,6 +20,9 @@ namespace WebStartAcademy8
             DbParams dbParams = new();
             dbParams.SqlConnectionString = builder.Configuration.GetConnectionString("DbAcademyOtto");
             builder.Services.AddSingleton(dbParams);
+
+            SqlDbHandler sqlDbHandler = new(builder.Configuration.GetConnectionString("DbAcademyOtto"));
+            builder.Services.AddSingleton(sqlDbHandler);
 
             var app = builder.Build();
 

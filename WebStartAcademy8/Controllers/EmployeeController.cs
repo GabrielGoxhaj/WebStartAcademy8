@@ -14,7 +14,7 @@ namespace WebStartAcademy8.Controllers
         public EmployeeController(DbParams dbParams, SqlDbHandler handler)
         {
             _params = dbParams;
-            _handler = handler;        
+            _handler = handler;
         }
 
         [HttpGet]
@@ -24,10 +24,9 @@ namespace WebStartAcademy8.Controllers
         }
 
         [HttpGet("GetTotalEmployees")]
-        public int GetCount()
+        public int GetTotalEmployees()
         {
             return _handler.GetTotalEmployees();
         }
-
     }
 }

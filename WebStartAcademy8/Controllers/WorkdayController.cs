@@ -10,10 +10,12 @@ namespace WebStartAcademy8.Controllers
     public class WorkdayController : ControllerBase
     {
         private readonly DbParams _dbParams;
+
         public WorkdayController(DbParams dbParams)
         {
             _dbParams = dbParams;
         }
+
 
         // GET: api/<WorkdayController>
         [HttpGet]
@@ -26,14 +28,13 @@ namespace WebStartAcademy8.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            return $"value: {id * id}";
         }
 
         // POST api/<WorkdayController>
         [HttpPost]
         public void Post([FromBody] string value)
         {
-
         }
 
         // PUT api/<WorkdayController>/5
